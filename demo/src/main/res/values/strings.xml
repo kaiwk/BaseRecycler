@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BaseRecycler</string>
+
+    <string-array name="main">
+        <item>BaseRecycler RecyclerView</item>
+    </string-array>
+</resources>
