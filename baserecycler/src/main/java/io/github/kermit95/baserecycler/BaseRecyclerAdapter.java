@@ -15,24 +15,24 @@ import java.util.List;
 /**
  * Created by kermit on 16/3/19.
  */
-public abstract class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder>{
+public abstract class BaseRecyclerAdapter<T extends ItemViewModel> extends RecyclerView.Adapter<BaseViewHolder>{
 
-    private List<ItemViewModel>  mDataList;
+    private List<T>  mDataList;
     private Context mContext;
 
     public BaseRecyclerAdapter(@NonNull Context context){
-        init(context, new ArrayList<ItemViewModel>());
+        init(context, new ArrayList<T>());
     }
 
-    public BaseRecyclerAdapter(@NonNull Context context, @NonNull ItemViewModel[] dataArray){
+    public BaseRecyclerAdapter(@NonNull Context context, @NonNull T[] dataArray){
         init(context, Arrays.asList(dataArray));
     }
 
-    public BaseRecyclerAdapter(@NonNull Context context, @NonNull List<ItemViewModel> dataList){
+    public BaseRecyclerAdapter(@NonNull Context context, @NonNull List<T> dataList){
         init(context, dataList);
     }
 
-    private void init(Context context, List<ItemViewModel> dataList){
+    private void init(Context context, List<T> dataList){
         this.mDataList = dataList;
         this.mContext = context;
     }
@@ -51,14 +51,14 @@ public abstract class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseViewH
         this.mNotifyDataChanged = notifyDataChanged;
     }
 
-    public void add(@NonNull ItemViewModel data){
+    public void add(@NonNull T data){
         synchronized (mLock) {
             mDataList.add(data);
         }
         if (mNotifyDataChanged) notifyDataSetChanged();
     }
 
-    public void addAll(@NonNull Collection<ItemViewModel> datas){
+    public void addAll(@NonNull Collection<T> datas){
         if (!datas.isEmpty()) {
             synchronized (mLock) {
                 mDataList.addAll(datas);
@@ -67,7 +67,7 @@ public abstract class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseViewH
         }
     }
 
-    public void addAll(@NonNull ItemViewModel...datas){
+    public void addAll(@NonNull T...datas){
         if (datas.length != 0){
             synchronized (mLock){
                 Collections.addAll(mDataList, datas);
@@ -76,14 +76,14 @@ public abstract class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseViewH
         }
     }
 
-    public void insert(@NonNull ItemViewModel data, int index){
+    public void insert(@NonNull T data, int index){
         synchronized (mLock){
             mDataList.add(index, data);
         }
         if (mNotifyDataChanged) notifyDataSetChanged();
     }
 
-    public void remove(@NonNull ItemViewModel data){
+    public void remove(@NonNull T data){
         synchronized (mLock){
             mDataList.remove(data);
         }
@@ -104,7 +104,7 @@ public abstract class BaseRecyclerAdapter extends RecyclerView.Adapter<BaseViewH
         if (mNotifyDataChanged) notifyDataSetChanged();
     }
 
-    public void sort(@NonNull Comparator<ItemViewModel> comparator){
+    public void sort(@NonNull Comparator<T> comparator){
         synchronized (mLock){
             Collections.sort(mDataList, comparator);
         }
