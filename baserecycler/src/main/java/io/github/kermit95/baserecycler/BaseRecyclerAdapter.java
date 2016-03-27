@@ -37,6 +37,11 @@ public abstract class BaseRecyclerAdapter<T extends ItemViewModel> extends Recyc
         this.mContext = context;
     }
 
+    @NonNull
+    public Context getContext(){
+        return mContext;
+    }
+
     /**
      * Any write operation performed on the array should be synchronized on this lock.
      */

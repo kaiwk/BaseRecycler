@@ -10,12 +10,12 @@ import io.github.kermit95.baserecycler.BaseRecyclerAdapter;
 import io.github.kermit95.baserecycler.BaseViewHolder;
 import io.github.kermit95.baserecycler.ItemViewModel;
 import io.github.kermit95.demo.baserecycler.model.Person;
-import io.github.kermit95.demo.baserecycler.model.TroubleMaker;
 
 /**
  * Created by kermit on 16/3/21.
  */
-public class MyAdapter extends BaseRecyclerAdapter{
+public class MyAdapter extends BaseRecyclerAdapter<ItemViewModel>{
+
 
     public MyAdapter(@NonNull Context context) {
         super(context);
@@ -33,7 +33,7 @@ public class MyAdapter extends BaseRecyclerAdapter{
     @Override
     protected BaseViewHolder OnCreateViewHolder(ViewGroup prarent, int viewType) {
         switch (viewType){
-            case TroubleMaker.VIEW_TYPE: return new TroubleViewHolder(prarent);
+            case Person.SOME_THING_DIFFERENT: return new TroubleViewHolder(prarent);
             case Person.VIEW_TYPE: return new PersonViewHolder(prarent);
             default: throw new IllegalArgumentException("No matched view type!");
         }
