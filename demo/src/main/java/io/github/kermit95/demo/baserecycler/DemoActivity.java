@@ -28,7 +28,7 @@ public class DemoActivity extends AppCompatActivity{
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        List<ItemViewModel> personList = new ArrayList<>();
+        List<Person> personList = new ArrayList<>();
         for (int i = 0; i < Constant.datas.length; i++) {
             Person person = new Person();
             person.setName(Constant.datas[i]);

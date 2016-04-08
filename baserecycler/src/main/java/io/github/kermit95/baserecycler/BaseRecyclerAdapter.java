@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+
 /**
  * Created by kermit on 16/3/19.
  */
@@ -40,6 +41,11 @@ public abstract class BaseRecyclerAdapter<T extends ItemViewModel> extends Recyc
     @NonNull
     public Context getContext(){
         return mContext;
+    }
+
+    @NonNull
+    public List<T> getDataList(){
+        return mDataList;
     }
 
     /**
@@ -139,5 +145,5 @@ public abstract class BaseRecyclerAdapter<T extends ItemViewModel> extends Recyc
 
 
     @NonNull
-    protected abstract BaseViewHolder OnCreateViewHolder(ViewGroup prarent, int viewType);
+    protected abstract BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType);
 }

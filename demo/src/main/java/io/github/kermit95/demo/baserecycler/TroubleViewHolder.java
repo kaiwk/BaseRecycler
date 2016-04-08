@@ -1,7 +1,9 @@
 package io.github.kermit95.demo.baserecycler;
 
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import io.github.kermit95.baserecycler.BaseViewHolder;
 import io.github.kermit95.demo.R;
@@ -23,5 +25,11 @@ public class TroubleViewHolder extends BaseViewHolder<Person>{
     public void setData(Person itemData) {
         super.setData(itemData);
         mImageView.setImageResource(R.mipmap.ic_launcher);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "oops~", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

@@ -25,14 +25,14 @@ public class PersonViewHolder extends BaseViewHolder<Person>{
     }
 
     @Override
-    public void setData(Person itemData) {
+    public void setData(final Person itemData) {
         mTextView.setText(itemData.getName());
         mImageView.setImageResource(R.mipmap.ic_launcher);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), getLayoutPosition() + "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getLayoutPosition() + ":" + itemData.getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }

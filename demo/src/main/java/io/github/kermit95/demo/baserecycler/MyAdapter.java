@@ -8,24 +8,23 @@ import java.util.List;
 
 import io.github.kermit95.baserecycler.BaseRecyclerAdapter;
 import io.github.kermit95.baserecycler.BaseViewHolder;
-import io.github.kermit95.baserecycler.ItemViewModel;
 import io.github.kermit95.demo.baserecycler.model.Person;
 
 /**
  * Created by kermit on 16/3/21.
  */
-public class MyAdapter extends BaseRecyclerAdapter<ItemViewModel>{
+public class MyAdapter extends BaseRecyclerAdapter<Person>{
 
 
     public MyAdapter(@NonNull Context context) {
         super(context);
     }
 
-    public MyAdapter(@NonNull Context context, @NonNull ItemViewModel[] dataArray) {
+    public MyAdapter(@NonNull Context context, @NonNull Person[] dataArray) {
         super(context, dataArray);
     }
 
-    public MyAdapter(@NonNull Context context, @NonNull List<ItemViewModel> dataList) {
+    public MyAdapter(@NonNull Context context, @NonNull List<Person> dataList) {
         super(context, dataList);
     }
 

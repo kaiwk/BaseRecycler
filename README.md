@@ -44,4 +44,6 @@
     }
 ```
 
+事件监听可在ViewHolder中使用itemview.setOnclickListener()
+
 详细参见demo, 此类可自由粘贴使用。

@@ -5,7 +5,6 @@ import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
